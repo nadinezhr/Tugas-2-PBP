@@ -8,6 +8,7 @@ Link adaptable : https://tugas-2-pbp.adaptable.app
 
 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 Jawab : ck (cheklist)
+
 ck1 : Sebelum membuat proyek Django, perlu untuk membuat direktori lokal, membuat repositori baru di GitHub dengan status public, melakukan inisiasi repositori baru dengan perintah - init di command (cmd), melakukan konfigurasi username dan email GitHub di cmd, dan menghubungkan direktori lokal kita dengan repositori di git. Cara mengubungkannya dapat dilakukan dengan menjalankan perintah branch -M (nama branch) dilanjutkan dengan melakukan git remote add origin (link repositori) di cmd proyek. Kemudian, untuk membuat proyek Django kita memerlukan virtual environment (env) agar tidak terjadi konflik dependensi dengan proyek lain. Yang pertama adalah menginisiasi env dan mengaktifkannya di command (cmd). Setelah memastikan env telah aktif, kita perlu menambahkan berkas requirements.txt beserta dependensinya ke dalam direktori proyek lokal yang telah dibuat dan melakukan instalasi pada berkas tersebut. Instalasi dilakukan di cmd setelah menambahkan file requirements. Setelah itu, lakukan perintah pada cmd untuk memulai proyek Django. Agar aplikasi web dapat diakses, kita perlu memberikan izin pada semua host yang mengakses. Hal tersebut dilakukan dengan membuka berkas file settings.py yang ada dalam direktori lokal pada IDE seperti vscode. Terakhir tambahkan ["*"] pada ALLOWED_HOST. Dengan demikian, proyek Django baru telah dibuat.
 
 ck2 : Sebelum membuat aplikasi, pastikan sudah mengaktifkan virtual environment (env) di cmd proyek kita. Setelah aktif, lakukan perintah python manage.py startapp (nama apk, yakni main) agar terbentuk struktur awal bagi aplikasi kita. Struktur tersebut berada dalam direktori main dengan isian berupa _init_.py, admin.py, apps.py, models.py, tests.py, urls.py, dan views.py. Kemudian, buka berkas file settings.py di direktori proyek pada IDE seperti vscode. Setelah itu, kita perlu mendaftarkan aplikasi main ke dalam proyek kita, yakni dengan menambahkan 'main' ke INSTALLED_APPS yang ada pada berkas file tersebut. Dengan demikian, kita telah membuat aplikasi main.
@@ -25,8 +26,8 @@ ck7 : Pertama-tama buka web adaptable dan login menggunakan akun GitHub yang ter
 ck8 : Buka direktori lokal proyek pada IDE seperti vscode. Kemudian buat file baru bernama README.md. Terakhir, isi berkas file tersebut dengan jawaban dari pertanyaan-pertanyaan pada tugas 2 PBP.
 
 2. Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html.
-<!-- ![Gambar Bagan](https://github.com/nadinezhr/Tugas-2-PBP/blob/main/Bagan tugas2 PBP.jpeg) -->
-Penjelasan : client akan melakukan request melalui tampilan web (html), request tersebut akan masuk ke urls.py. urls.py akan meneruskan request tersebut ke views.py untuk diproses. Untuk memproses request, views.py akan mengakses data yang diperlukan di models.py, seperti membaca atau menulis data. Berkas html akan mengakses hasil request client pada views.py sebelum ditampilkan pada tampilan web.
+![Gambar Bagan](https://github.com/nadinezhr/Tugas-2-PBP/blob/main/Bagan tugas2 PBP.jpeg)
+    Penjelasan : client akan melakukan request melalui tampilan web (html), request tersebut akan masuk ke urls.py. urls.py akan meneruskan request tersebut ke views.py untuk diproses. Untuk memproses request, views.py akan mengakses data yang diperlukan di models.py, seperti membaca atau menulis data. Berkas html akan mengakses hasil request client pada views.py sebelum ditampilkan pada tampilan web.
 
 
 3. Jelaskan mengapa kita menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment?
@@ -47,6 +48,7 @@ Jawab :
 
 
 REFERENSI :
+
 3. https://revou.co/panduan-teknis/python-virtual-environment#:~:text=Salah%20satu%20manfaat%20utama%20penggunaan,mungkin%20berbeda%20dengan%20proyek%20lainnya.
 
 4. - https://revou.co/kosakata/mvc#manfaat-mvc

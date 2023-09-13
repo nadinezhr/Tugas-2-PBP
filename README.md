@@ -26,7 +26,7 @@ ck7 : Pertama-tama buka web adaptable dan login menggunakan akun GitHub yang ter
 ck8 : Buka direktori lokal proyek pada IDE seperti vscode. Kemudian buat file baru bernama README.md. Terakhir, isi berkas file tersebut dengan jawaban dari pertanyaan-pertanyaan pada tugas 2 PBP.
 
 2. Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html.
-![Gambar Bagan](https://github.com/nadinezhr/Tugas-2-PBP/blob/main/Bagantugas2PBP.jpeg)
+![Gambar Bagan](https://github.com/nadinezhr/Tugas-2-PBP/blob/main/Bagan tugas2 PBP.jpeg)
     Penjelasan : client akan melakukan request melalui tampilan web (html), request tersebut akan masuk ke urls.py. urls.py akan meneruskan request tersebut ke views.py untuk diproses. Untuk memproses request, views.py akan mengakses data yang diperlukan di models.py, seperti membaca atau menulis data. Berkas html akan mengakses hasil request client pada views.py sebelum ditampilkan pada tampilan web.
 
 

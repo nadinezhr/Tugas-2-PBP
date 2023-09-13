@@ -49,6 +49,7 @@ Link adaptable : https://tugas-2-pbp.adaptable.app/main/
     Perbedaan MVC, MVT, dan MVVM :
     - Perbedaan utama terletak pada tugas controller, template, dan viewmodel. Controller bertanggung jawab untuk mengontrol aliran data antara Model dan View, serta mengatur interaksi pengguna. Controller mengambil peran mediator dalam MVC. Template bertanggung jawab untuk merender tampilan HTML dan menggabungkannya dengan data dari Model. Viewmodel bertanggung jawab untuk menghubungkan Model dengan View. ViewModel menyediakan abstraksi atas data yang akan ditampilkan di View, serta mengatur perubahan data agar sesuai dengan tampilan yang ada di View. 
     - Perbedaan MVC, MVT, dan MVVM juga terletak pada data binding (pengikatan data). MVC dan MVT tidak memiliki pengikatan data secara default sehingga memerlukan kode tambahan. Sementara itu, MVVM memiliki default pengikatan data sehingga memungkinkan model dan view terhubung secara otomatis.
+    - Perbedaan MVC, MVT, dan MVVM juga terletak pada kompatibilitas. MVVM memiliki kompatibilitas paling unggul di antara ketiganya, sedangkan MVC memiliki lebih banyak penyesuaian pola dibanding MVT.
 
 
 REFERENSI :

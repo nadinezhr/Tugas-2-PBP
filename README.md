@@ -4,7 +4,7 @@ NPM     : 2206028264
 
 Kelas   : PBP B
 
-Link adaptable : https://tugas-2-pbp.adaptable.app
+Link adaptable : https://tugas-2-pbp.adaptable.app/main/
 
 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 Jawab : ck (cheklist)

@@ -1,5 +1,6 @@
+{% extends 'base.html' %}
+{% block content %}
 <!DOCTYPE html>
-<html>
 <head>
     <style>
         th {
@@ -26,41 +27,24 @@
             <th>Harga</th>
             <th>Gambar Material</th>
         </tr>
-        <tr>
-            <td>{{material1}}</td>
-            <td>{{deskripsi1}}</td>
-            <td>{{stok1}}</td>
-            <td>{{harga1}}</td>
-            <td><img src="https://www.bhinneka.com/web/image/product.template/17139/image_1024?unique=054f907" width="100" height="100"></td>
-        </tr>
-        <tr>
-            <td>{{material2}}</td>
-            <td>{{deskripsi2}}</td>
-            <td>{{stok2}}</td>
-            <td>{{harga2}}</td>
-            <td><img src="https://s2.bukalapak.com/img/2653265492/large/paku_payung.jpg" width="100" height="100"></td>
-        </tr>
-        <tr>
-            <td>{{material3}}</td>
-            <td>{{deskripsi3}}</td>
-            <td>{{stok3}}</td>
-            <td>{{harga3}}</td>
-            <td><img src="https://hargaper.com/wp-content/uploads/2021/04/bata-merah-1.jpg" width="100" height="100"></td>
-        </tr>
-        <tr>
-            <td>{{material4}}</td>
-            <td>{{deskripsi4}}</td>
-            <td>{{stok4}}</td>
-            <td>{{harga4}}</td>
-            <td><img src="https://berita.99.co/wp-content/uploads/2019/06/cat-tembok-terbaik.jpg" width="100" height="100"></td>
-        </tr>
-        <tr>
-            <td>{{material5}}</td>
-            <td>{{deskripsi5}}</td>
-            <td>{{stok5}}</td>
-            <td>{{harga5}}</td>
-            <td><img src="https://a.allegroimg.com/s512/11f790/2661c5584cc49e959540fe39d687/Kabel-solarni-kabel-6mm2-cerny-1mb" width="100" height="100"></td>
-        </tr>
+        {% for product in products %}
+            <tr>
+                <td>{{product.name}}</td>
+                <td>{{product.description}}</td>
+                <td>{{product.amount}}</td>
+                <td>{{product.price}}</td>
+                <td><img src= "{{ product.picture }}" width="100" /></td>
+            </tr>
+        {% endfor %}
+
     </table>
-</body>
+    <br />
+
+    <a href="{% url 'main:create_product' %}">
+        <button>
+            Add New Product
+        </button>
+    </a>
+    </body>
 </html>
+{% endblock content %}

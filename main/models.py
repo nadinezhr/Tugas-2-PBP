@@ -5,3 +5,4 @@ class Item(models.Model):
     description = models.TextField()
     amount = models.IntegerField()
     price = models.IntegerField()
+    picture = models.URLField(max_length=100)

@@ -6,6 +6,73 @@ Kelas   : PBP B
 
 Link adaptable : https://tugas-2-pbp.adaptable.app/main/
 
+##TUGAS-3
+
+1. Apa perbedaan antara form POST dan form GET dalam Django?
+    
+    POST dan GET dalam Django memiliki beberapa perbedaan, antara lain :
+
+    1. GET method mengirimkan data kepada pengguna melalui URL yang dapat dilihat atau dibaca. Sedangkan, POST mengirimkan data secara tidak terlihat kepada pengguna melalui HTTP POST.
+
+    2. GET tidak bisa mengirimkan data dengan ukuran besar karena terdapat limit pada URL yang diizinkan oleh browser dan server. Sedangkan, POST dapat mengirimkan data dengan ukuran besar. 
+
+    3. GET memiliki tingkat keamanan yang lebih rendah daripada POST karena data ditampilkan dalam URL atau dapat dilihat dan dibaca oleh pengguna. Dengan demikian, penggunaan GET juga lebih rentan dicuri oleh pelaku kejahatan IT dibandingkan penggunaan POST.
+
+    4. Berdasarkan tingkat keamanannya, GET digunakan pada data yang bersifat umum (tidak sensitif). Sementara itu, POST digunakan untuk mengirimkan data penting dan sensitif.
+
+    5. GET hanya mengizinkan penggunaan tipe data karakter ASCII, sedangkan POST mengizinkan penggunaan seluruh tipe data.
+
+    6. Request melalui GET akan ditempatkan pada cache memori dan history milik browser. Sementara itu, request melalui POST tidak ditempatkan pada cache memori dan history milik browser.
+
+2. Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data?
+
+    1. Struktur Data :
+
+        -XML : Bahasa markup dan format file yang digunakan untuk menyimpan, mentransmisikan, dan merekonstruksi data.
+        -JSON : Format file standar terbuka dan format pertukaran data dengan teks berbentuk pasangan key-value yang dapat dibaca oleh manusia.
+        - HTML : Bahasa markup yang digunakan untuk menentukan struktur halaman dalam pengembangan web.
+
+    2. Tipe Data :
+
+        -XML : Dapat merepresentasikan berbagai jenis data struktural dan semantik dengan tipe data berbeda. Namun, XML tidak mendukung penggunaan array.
+        -JSON : Mendukung tipe data dasar seperti string, boolean, array, angka, dan objek.
+        -HTML : Dapat merepresentasikan elemen-elemen khusus dalam konten web, seperti teks, gambar, dan lainnya.
+
+    3. Lintas Platform:
+
+        -XML: Mendukung di banyak bahasa pemrograman, tetapi perlu lebih banyak kode untuk mengurai dan memanipulasi data XML.
+        -JSON: Didukung oleh hampir semua bahasa pemrograman modern dan memiliki dukungan yang lebih baik untuk mengurai data JSON.
+        -HTML: Digunakan dalam pengembangan web dan memiliki dukungan penuh dalam semua peramban web modern.
+
+3. Mengapa JSON sering digunakan dalam pertukaran data antara aplikasi web modern?
+
+    Jawab : JSON sering digunakan dalam pertukaran data antara aplikasi web modern karena memiliki beberapa keunggulan yang mendukung tujuan tersebut. Yang pertama, JSON memiliki format sederhana dan mudah dibaca oleh manusia. Format JSON berbentuk seperti dictionary dalam python, yakni nama(key) dan nilai(value) yang mudah dikelola serta mudah dipahami. Keunggulan yang kedua adalah JSON memiliki format data yang ringan (tidak memiliki overhead signifikan) sehingga pertukaran data dapat berjalan secara efisien dan aplikasi web beroperasi dengan cepat. Keunggulan ketiga adalah JSON memungkinkan komunikasi lintas platform yang mudah antar bagian aplikasi web ataupun antar aplikasi web berbeda karena JSON didukung oleh hampir seluruh bahasa pemrograman, seperti python, java, dan lainnya. Keunggulan yang keempat adalah JSON memiliki struktur yang ringkas sehingga dapat menghemat bandwitch saat mengirim data melalui jaringan. Keunggulan terakhir JSON adalah dapat digunakan dalam pembaruan dinamis pada halaman web tanpa perlu melakukan refresh halaman web. Dari beberapa keunggulan JSON diatas, dapat disimpulkan bahwa JSON memiliki keunggulan utama dalam kesederhanaan struktur dan format sehingga mudah dibaca dan dipahami manusia.
+
+4. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step
+
+    Jawab : checklist(ck)
+
+    ck1 : Pertama-tama, saya membuka direktori lokal proyek yang telah dibuat pada tugas 2, yakni direktori Nadterial_store di IDE seperti vscode. Kemudian, saya membuka command prompt (cmd) direktori lokal tersebut dan mengaktifkan virtual environment (env). Setelah env aktif, saya mengubah path pada berkas urls.py yang berada dalam direktori nadterial_store melalui vscode. Path yang sebelumnya berupa main/ diubah menjadi string kosong (''). Sebelum membuat form, saya membuat kerangka dari views web agar tidak terjadi redundansi kode dan desain aplikasi web konsisten. Pertama, saya membuat folder templates dalam folder Nadterial_store yang paling luar pada vscode. Di dalam folder templates tersebut, saya membuat berkas file bernama base.html yang akan menjadi kerangka umum halaman aplikasi web. Setelah itu, berkas tersebut diisi dengan kode-kode yang akan menjadi kerangka umum. Setelah selesai pada berkas base.html, saya membuka berkas settings.py yang juga ada dalam direktori nadterial_store untuk mengubah isi dari 'DIRS'. Isi 'DIRS' yang berada dalam TEMPLATES[] ditambahkan dengan [BASE_DIR/'templates'],. Setelah membuat kerangka umumnya pada base.html, saya mengubah isi dari main.html, yaitu halaman aplikasi web sesuai dengan kerangka dasar. Pertama-tama, saya membuka berkas main.html pada direktori main/templates di vscode. Kemudian, saya menambahkan kode untuk meng-extends base.html dan membuat kode block content serta penutup block tersebut. Setelah itu, saya mengubah format nama,kelas, dan judul tiap kolom tabel yang saya buat di aplikasi web sebelumnya sesuai kerangka serta menghapus kode html isian daftar produk-produk di nadterial_store sebelumnya. Setelah melakukan implementasi kerangka dasar, saya baru membuat form input data pada html. Pertama, saya membuat berkas file baru pada direktori main bernama forms.py. Dalam berkas tersebut, lakukan import ModelForm dari Django.forms dan import Item dari main.models. Kemudian, saya membuat kelas ProductForm dengan parameter ModelForm. Sebelum membuat field, saya membuat objek bernama Product dari model yang digunakan untuk form. Kemudian, saya membuat field dari kelas Meta sesuai dengan elemen yang dibutuhkan pada tabel produk di main.html, yaitu name, description, picture, amount, dan price. Setelah selesai pada file forms.py, saya membuka berkas file views.py yang ada dalam direktori main. Saya menambahkan beberapa import dalam berkas tersbut, antara lain import HttpResponseRedirect dari django.http, import ProductForm dari main.forms, import item dari main.models, dan import reverse dari django.urls. Setelah melakukan import, saya menambahkan sebuah fungsi baru untuk membuat formulir penambahan produk yang akan dimasukkan pengguna. Fungsi tersebut bernama create_product dengan parameter request dan pengembalian fungsi tersebut juga berupa request pengguna. Kemudian, pada fungsi show_main yang telah dibuat sebelumnya, saya menambahkan kode 'products = Item.objects.all()' guna mengambil seluruh object Product pada database. Setelah selesai, saya membuka berkas file urls.py milik direktori main untuk menambahkan import fungsi baru yang telah dibuat, yakni fungsi create_product serta melakukan routing pada fungsi tersebut dengan menambahkan path fungsi ke dalam urlpatterns. Selanjutnya, saya membuat berkas baru bernama create_product.html dalam direktori main/templates dan mengisi file tersebut dengan kode-kode yang akan menampilkan tabel dari produk-produk Nadterial store. Yang terakhir adalah saya menambahkan implementasi kerangka dasar untuk daftar produk - produk Nadterial store menggunakan for-loop serta menambahkan tombol add product pada halaman aplikasi web di berkas main.html. Dengan demikian, saya telah membuat input form pada aplikasi web.
+
+    ck2 dan ck3 : Pertama-tama, saya membuka berkas file views.py yang ada dalam direktori main (seluruh fungsi dibuat dalam berkas tersebut). Kemudian, saya menambahkan beberapa import, yakni import HttpResponse dan import serializers. Fungsi yang pertama telah dibuat bernama create_product. Kemudian, saya membuat fungsi kedua, yakni show_xml dengan parameter request dan pengembalian fungsi tersebut dalam bentuk XML. Setiap membuat fungsi baru, saya juga melakukan routing dengan cara menambahkan path fungsi tersebut ke dalam urlpattern yang ada di berkas urls.py pada direktori main (seluruh routing fungsi dilakukan pada berkas tersebut). Setiap fungsi baru juga saya import di berkas tersebut agar dapat diakses. Setelah itu, saya membuat fungsi ketiga bernama show_json dengan parameter request dan pengembalian fungsi tersebut dalam JSON. Fungsi yang keempat saya buat bernama show_xml_by_id dengan parameter request dan id (data) dan pengembalian fungsi tersebut dalam bentuk XML juga. Fungsi kelima atau terakhir yang saya buat bernama show_json_by_id dengan parameter request dan id (data) dan pengembalian fungsi tersebut dalam bentuk JSON.
+
+    ck4 : Pertama-tama buka berkas README.md pada IDE seperti vscode. Kemudian, saya memberi batasan README antara tugas 2 dan tugas 3. Terakhir, saya mengisi README dengan jawaban dari pertanyaan-pertanyaan tugas 3.
+
+    ck5 : Pertama-tama, saya membuka Postman dan login. Kemudian, saya memasukkan link HTML, XML, JSON, XML[id] (saya mengambil data ke-2), dan JSON [id] (saya mengambil data ke-1) pada kolom method GET. Kemudian, setiap respon yang diberikan dari link tersebut saya screenshot dan saya lampirkan di README.md.
+
+    ck6 : Saya membuka cmd pada direktori lokal proyek kemudian tidak lupa untuk memastikan env telah aktif. Saya lakukan perintah git add ., git commit -m, dan git push -u origin main untuk meng-upload hasil penyelesaian tugas 3.
+
+5. Berikut screenshot hasil akses URL pada Postman.
+
+REFERENSI :
+
+- https://www.geeksforgeeks.org/difference-between-http-get-and-post-methods/
+- https://www.deltaxml.com/blog/xml/whats-the-relationship-between-xml-json-html-and-the-internet/
+
+
+
+##TUGAS-2
+
 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 
     Jawab : ck (cheklist)

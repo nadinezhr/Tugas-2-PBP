@@ -12,17 +12,18 @@ Link adaptable : https://tugas-2-pbp.adaptable.app/main/
     
     POST dan GET dalam Django memiliki beberapa perbedaan, antara lain :
 
-    1. GET method mengirimkan data kepada pengguna melalui URL yang dapat dilihat atau dibaca. Sedangkan, POST mengirimkan data secara tidak terlihat kepada pengguna melalui HTTP POST.
+    1. GET method mengirimkan data kepada pengguna melalui URL yang dapat dilihat atau dibaca. Sedangkan, POST mengirimkan data secara tidak terlihat kepada pengguna 
+       melalui HTTP POST.
 
-    2. GET tidak bisa mengirimkan data dengan ukuran besar karena terdapat limit pada URL yang diizinkan oleh browser dan server. Sedangkan, POST dapat mengirimkan data dengan ukuran besar. 
+    2. GET tidak bisa mengirimkan data dengan ukuran besar karena terdapat limit pada URL yang diizinkan oleh browser dan server. Sedangkan, POST dapat mengirimkan data           dengan ukuran besar. 
 
-    3. GET memiliki tingkat keamanan yang lebih rendah daripada POST karena data ditampilkan dalam URL atau dapat dilihat dan dibaca oleh pengguna. Dengan demikian, penggunaan GET juga lebih rentan dicuri oleh pelaku kejahatan IT dibandingkan penggunaan POST.
+    3. GET memiliki tingkat keamanan yang lebih rendah daripada POST karena data ditampilkan dalam URL atau dapat dilihat dan dibaca oleh pengguna. Dengan demikian,               penggunaan GET juga lebih rentan dicuri oleh pelaku kejahatan IT dibandingkan penggunaan POST.
 
-    4. Berdasarkan tingkat keamanannya, GET digunakan pada data yang bersifat umum (tidak sensitif). Sementara itu, POST digunakan untuk mengirimkan data penting dan sensitif.
+    4. Berdasarkan tingkat keamanannya, GET digunakan pada data yang bersifat umum (tidak sensitif). Sementara itu, POST digunakan untuk mengirimkan data penting dan              sensitif.
 
     5. GET hanya mengizinkan penggunaan tipe data karakter ASCII, sedangkan POST mengizinkan penggunaan seluruh tipe data.
 
-    6. Request melalui GET akan ditempatkan pada cache memori dan history milik browser. Sementara itu, request melalui POST tidak ditempatkan pada cache memori dan history milik browser.
+    6. Request melalui GET akan ditempatkan pada cache memori dan history milik browser. Sementara itu, request melalui POST tidak ditempatkan pada cache memori dan               history milik browser.
 
 2. Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data?
 
@@ -61,6 +62,7 @@ Link adaptable : https://tugas-2-pbp.adaptable.app/main/
     ck5 : Pertama-tama, saya membuka Postman dan login. Kemudian, saya memasukkan link HTML, XML, JSON, XML[id] (saya mengambil data ke-2), dan JSON [id] (saya mengambil data ke-1) pada kolom method GET. Kemudian, setiap respon yang diberikan dari link tersebut saya screenshot dan saya lampirkan di README.md.
 
     ck6 : Saya membuka cmd pada direktori lokal proyek kemudian tidak lupa untuk memastikan env telah aktif. Saya lakukan perintah git add ., git commit -m, dan git push -u origin main untuk meng-upload hasil penyelesaian tugas 3.
+![WhatsApp Image 2023-09-18 at 19 48 04](https://github.com/nadinezhr/Tugas-2-PBP/assets/130216958/02fe15a3-30db-4ff6-ae00-91867ac07ad5)
 
 5. Berikut screenshot hasil akses URL pada Postman.
 

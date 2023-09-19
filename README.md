@@ -62,9 +62,18 @@ Link adaptable : https://tugas-2-pbp.adaptable.app/main/
     ck5 : Pertama-tama, saya membuka Postman dan login. Kemudian, saya memasukkan link HTML, XML, JSON, XML[id] (saya mengambil data ke-2), dan JSON [id] (saya mengambil data ke-1) pada kolom method GET. Kemudian, setiap respon yang diberikan dari link tersebut saya screenshot dan saya lampirkan di README.md.
 
     ck6 : Saya membuka cmd pada direktori lokal proyek kemudian tidak lupa untuk memastikan env telah aktif. Saya lakukan perintah git add ., git commit -m, dan git push -u origin main untuk meng-upload hasil penyelesaian tugas 3.
-![WhatsApp Image 2023-09-18 at 19 48 04](https://github.com/nadinezhr/Tugas-2-PBP/assets/130216958/02fe15a3-30db-4ff6-ae00-91867ac07ad5)
 
 5. Berikut screenshot hasil akses URL pada Postman.
+   
+![XML](https://github.com/nadinezhr/Tugas-2-PBP/assets/130216958/2eed1775-e7f2-4bc5-85ae-acb6822b007b)
+
+![Json](https://github.com/nadinezhr/Tugas-2-PBP/assets/130216958/293f8d65-675d-46cf-89d1-9cd2d4a6197c)
+
+![XmlID](https://github.com/nadinezhr/Tugas-2-PBP/assets/130216958/341391d7-8ebd-4221-936a-7f60c72fc3e0)
+
+![JsonID](https://github.com/nadinezhr/Tugas-2-PBP/assets/130216958/0d8d00e8-7c79-4ccd-9fc9-f34506c1d90e)
+
+![HTML](https://github.com/nadinezhr/Tugas-2-PBP/assets/130216958/b361c2c5-0bdd-424c-babb-69583abeb8a0)
 
 REFERENSI :
 

@@ -8,6 +8,7 @@ from django.core import serializers
 
 def show_main(request):
     products = Item.objects.all()
+    jumlah = Item.objects.count()
 
     context = {
         'apk' : 'Nadterial Store',
@@ -33,7 +34,8 @@ def show_main(request):
         'stok3' : '1000 pcs',
         'stok4' : '30 kaleng',
         'stok5' : '120 meter',
-        'products': products
+        'products': products,
+        'jumlah' : jumlah
 
     }
 

@@ -62,6 +62,8 @@ Link adaptable : https://tugas-2-pbp.adaptable.app/main/
 
     ck6 : Saya membuka cmd pada direktori lokal proyek kemudian tidak lupa untuk memastikan env telah aktif. Saya lakukan perintah git add ., git commit -m, dan git push -u origin main untuk meng-upload hasil penyelesaian tugas 3.
 
+    ck7 (Bonus) : Pertama, saya membuka berkas views.py pada direktori main. Kemudian, di dalam fungsi show_main saya menambahkan kode 'jumlah = Item.objects.count()' dan kode key-value 'jumlah' : jumlah. Tujuannya adalah untuk menghitung jumlah keseluruhan item/produk yang telah ditambahkan ke aplikasi web. Selanjutnya, saya membuka berkas file main.html dan menambahkan implementasi kerangka dasar di bawah kerangka kelas dengan tulisan berupa 'Kamu menyimpan X item pada aplikasi ini' dengan X menggunakan variable jumlah yang sebelumnya dibuat di views.py. 
+
 5. Berikut screenshot hasil akses URL pada Postman.
 
 REFERENSI :

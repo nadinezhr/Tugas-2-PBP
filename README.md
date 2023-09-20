@@ -6,7 +6,7 @@ Kelas   : PBP B
 
 Link adaptable : https://tugas-2-pbp.adaptable.app/main/
 
-##TUGAS-3
+##TUGAS-3##
 
 1. Apa perbedaan antara form POST dan form GET dalam Django?
     
@@ -82,7 +82,7 @@ REFERENSI :
 
 
 
-##TUGAS-2
+##TUGAS-2##
 
 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 

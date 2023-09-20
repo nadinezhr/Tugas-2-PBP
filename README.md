@@ -75,7 +75,8 @@ Link adaptable : https://tugas-2-pbp.adaptable.app/main/
 
 ![JsonID](https://github.com/nadinezhr/Tugas-2-PBP/assets/130216958/0d8d00e8-7c79-4ccd-9fc9-f34506c1d90e)
 
-![HTML](https://github.com/nadinezhr/Tugas-2-PBP/assets/130216958/b361c2c5-0bdd-424c-babb-69583abeb8a0)
+![HTML FIX](https://github.com/nadinezhr/Tugas-2-PBP/assets/130216958/64e7d9d2-e1df-4ab8-996e-e5a87c2f9062)
+
 
 REFERENSI :
 

@@ -40,14 +40,18 @@ Link adaptable : https://tugas-2-pbp.adaptable.app/main/
 
     Penggunaan cookies aman jika diimplementasikan dengan baik dan benar. Namun, terdapat beberapa risiko potensial yang tetap harus diwaspadai, antara lain :
 
-        - Pelanggaran privasi : data cookies yang menyimpan aktivitas pengguna selama berinteraksi dalam web dapat menjadi masalah pelanggaran privasi jika data tersebut disalahgunakan.
-        - Pencurian cookies : cookies yang tersimpan di browser pengguna dapat dicuri datanya oleh pelaku tindakan kriminal pencurian data. Hal tersebut dapat terjadi jika ada celah keamanan dalam aplikasi web atau jika pengguna mengakses web melalui koneksi (HTTP) yang tidak aman.
+        - Pelanggaran privasi : data cookies yang menyimpan aktivitas pengguna selama berinteraksi dalam web dapat
+   menjadi masalah pelanggaran privasi jika data tersebut disalahgunakan.
+        - Pencurian cookies : cookies yang tersimpan di browser pengguna dapat dicuri datanya oleh pelaku tindakan
+   kriminal pencurian data. Hal tersebut dapat terjadi jika ada celah keamanan dalam aplikasi web atau jika pengguna
+   mengakses web melalui koneksi (HTTP) yang tidak aman.
         - Overhead : jumlah cookies yang banyak dapat menyebabkan overhead pada kinerja situs dan lalu lintas web.
-        - Cross-Site Scripting (XSS) : data-data sensitif yang ada dalam cookies dapat dicuri maupun dimanipulasi oleh penyerang dengan cara menyisipkan skrip berbahaya ke dalam halaman web. 
+        - Cross-Site Scripting (XSS) : data-data sensitif yang ada dalam cookies dapat dicuri maupun dimanipulasi
+   oleh penyerang dengan cara menyisipkan skrip berbahaya ke dalam halaman web. 
 
     Dengan demikian, penggunaan cookies yang tepat tetap perlu diawasi agar dapat terhindar dari risiko potensial yang ada.
     
-6. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+7. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 
     checklist (ck)
 

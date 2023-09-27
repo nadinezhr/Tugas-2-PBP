@@ -11,20 +11,22 @@ Link adaptable : https://tugas-2-pbp.adaptable.app/main/
 1. Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?
 
     Django UserCreationForm merupakan impor formulir bawaan Django yang memudahkan proses pendaftaran pengguna dalam suatu aplikasi web (register). Form tersebut memiliki 3 default fitur yang harus dimasukkan pengguna, yaitu nama pengguna (username), kata sandi(password), dan konfirmasi kata sandi. Tujuannya agar aplikasi web hanya bisa diakses oleh pengguna yang telah terdaftar dan terverifikasi. Terdapat beberpa kelebihan dari penggunaan UserCreationForm, antara lain :
+   
         - Implementasi mudah : UserCreationForm merupakan buit-in dari Django sehingga programmer hanya perlu melakukan import tidak perlu menulis kode program dari awal.
         - Terintegrasi dengan Model : UserCreationForm sudah terintegrasi dengan model sehingga penyimpanan data pengguna sudah terhubung langsung dengan database.
         - Validasi built-in : UserCreationForm sudah memiliki bentuk validasi bawaan, seperti password yang tidak boleh hanya terdiri dari angka dan memiliki minimal 8 karakter.
 
     Selain memiliki kelebihan, UserCreationDjango juga memiliki beberapa kelemahan, antara lain :
+   
         - Tampilan terbatas : UserCreationForm hanya berupa formulir Python yang tidak memiliki tampilan HTML sehingga programmer perlu membuat tampilan kustom pada aplikasi web.
         - Fitur terbatas : UserCreationForm hanya memiliki 3 default fitur, yakni username, password, dan konformasi password sehingga programmer perlu menambahkan kode jika ingin menambahkan fitur lain seperti verifikasi email.
 
-2. Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?
+3. Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?
 
     Django memiliki built-in autentikasi dan otorisasi yang dapat digunakan langsung oleh programmer. Autentikasi merupakan proses verifikasi identitas pengguna yang akan mengakses aplikasi web. Sementara itu, otorisasi merupakan proses pemberian izin apa yang dimiliki oleh pengguna setelah terverifikasi sebelumnya. Autorisasi akan mengecek apakah pengguna tersebut memiliki hak untuk mengakses aplikasi web dengan cara memeriksa keseluruhan data pengguna (username dan password). Sedangkan, otorisasi akan memastikan bahwa pengguna hanya memiliki akses ke sumber daya atau fitur yang sesuai dengan izin mereka dalam aplikasi web. Kedua hal tersebut memiliki peranan penting dalam menjaga keamanan data terutama data sensitif serta fungsionalitas aplikasi web dari pengguna yang tidak memiliki hak yang sah (izin).
 
 
-3. Apa itu cookies dalam konteks aplikasi web, dan bagaimana Django menggunakan cookies untuk mengelola data sesi pengguna?
+4. Apa itu cookies dalam konteks aplikasi web, dan bagaimana Django menggunakan cookies untuk mengelola data sesi pengguna?
 
     Cookies merupakan mekanisme penyimpanan kecil untuk menyimpan informasi pada browser pengguna dan mengirimkannya kembali ke server web di setiap permintaan HTTP. Dalam django, cookies digunakan untuk mengelola data sesi pengguna (informasi tentang pengguna selama berinteraksi dengan aplikasi web) sebgai berikut :
 
@@ -34,7 +36,7 @@ Link adaptable : https://tugas-2-pbp.adaptable.app/main/
 
     Pengelolaan data pada sesi pengguna tersebut dilakukan oleh Django melalui beberapa tahapan, seperti mengaktifkan middleware, mengelola sesi dengan melakukan konfigurasi pengaturan sesi, dan menyimpan data sesi pengguna.
 
-4. Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?
+5. Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?
 
     Penggunaan cookies aman jika diimplementasikan dengan baik dan benar. Namun, terdapat beberapa risiko potensial uang tetap harus diwaspadai, antara lain :
 
@@ -45,7 +47,7 @@ Link adaptable : https://tugas-2-pbp.adaptable.app/main/
 
     Dengan demikian, penggunaan cookies yang tepat tetap perlu diawasi agar dapat terhindar dari risiko potensial yang ada.
     
-5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+6. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 
     ceklis (ck)
 

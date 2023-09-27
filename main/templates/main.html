@@ -30,9 +30,30 @@
         </tr>
         {% for product in products %}
             <tr>
-                <td>{{product.name}}</td>
+                <td>{{product.name}}
+                    <!-- Tombol untuk menghapus produk -->
+                <a href="{% url 'main:delete_item' product.id %}">
+                    <button>
+                        Hapus
+                    </button>
+                </a>
+                </td>
                 <td>{{product.description}}</td>
-                <td>{{product.amount}}</td>
+                <td>{{product.amount}}
+                    <!-- Tombol untuk menambah stok -->
+                    <a href="{% url 'main:add_stock' product.id %}">
+                        <button>
+                            Tambah
+                        </button>
+                    </a>
+                    
+                    <!-- Tombol untuk mengurangi stok -->
+                    <a href="{% url 'main:reduce_stock' product.id %}">
+                        <button>
+                            Kurang
+                        </button>
+                    </a>
+                </td>
                 <td>{{product.price}}</td>
                 <td><img src= "{{ product.picture }}" width="100" /></td>
             </tr>
@@ -54,28 +75,6 @@
         </button>
     </a>
 
-    {% for product in products %}
-    <p>{{ product.name }} - {{ product.amount }}</p>
-    <a href="{% url 'main:delete_item' product.id %}">
-        <button>
-            Hapus
-        </button>
-    </a>
-
-    <!-- Tombol untuk menambah stok -->
-    <a href="{% url 'main:add_stock' product.id %}">
-        <button>
-            Tambah
-        </button>
-    </a>
-
-    <!-- Tombol untuk mengurangi stok -->
-    <a href="{% url 'main:reduce_stock' product.id %}">
-        <button>
-            Kurang
-        </button>
-    </a>
-    {% endfor %}
     </body>
 </html>
 {% endblock content %}

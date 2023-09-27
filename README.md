@@ -21,12 +21,12 @@ Link adaptable : https://tugas-2-pbp.adaptable.app/main/
     - Tampilan terbatas : UserCreationForm hanya berupa formulir Python yang tidak memiliki tampilan HTML sehingga programmer perlu membuat tampilan kustom pada aplikasi web.
     - Fitur terbatas : UserCreationForm hanya memiliki 3 default fitur, yakni username, password, dan konformasi password sehingga programmer perlu menambahkan kode jika ingin menambahkan fitur lain seperti verifikasi email.
 
-3. Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?
+2. Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?
 
     Django memiliki built-in autentikasi dan otorisasi yang dapat digunakan langsung oleh programmer. Autentikasi merupakan proses verifikasi identitas pengguna yang akan mengakses aplikasi web. Sementara itu, otorisasi merupakan proses pemberian izin apa yang dimiliki oleh pengguna setelah terverifikasi sebelumnya. Autorisasi akan mengecek apakah pengguna tersebut memiliki hak untuk mengakses aplikasi web dengan cara memeriksa keseluruhan data pengguna (username dan password). Sedangkan, otorisasi akan memastikan bahwa pengguna hanya memiliki akses ke sumber daya atau fitur yang sesuai dengan izin mereka dalam aplikasi web. Kedua hal tersebut memiliki peranan penting dalam menjaga keamanan data terutama data sensitif serta fungsionalitas aplikasi web dari pengguna yang tidak memiliki hak sah (izin).
 
 
-4. Apa itu cookies dalam konteks aplikasi web, dan bagaimana Django menggunakan cookies untuk mengelola data sesi pengguna?
+3. Apa itu cookies dalam konteks aplikasi web, dan bagaimana Django menggunakan cookies untuk mengelola data sesi pengguna?
 
     Cookies merupakan mekanisme penyimpanan kecil untuk menyimpan informasi pada browser pengguna dan mengirimkannya kembali ke server web di setiap permintaan HTTP. Dalam django, cookies digunakan untuk mengelola data sesi pengguna (informasi tentang pengguna selama berinteraksi dengan aplikasi web) sebagai berikut :
 
@@ -36,22 +36,25 @@ Link adaptable : https://tugas-2-pbp.adaptable.app/main/
 
     Pengelolaan data pada sesi pengguna tersebut dilakukan oleh Django melalui beberapa tahapan, seperti mengaktifkan middleware, mengelola sesi dengan melakukan konfigurasi pengaturan sesi, dan menyimpan data sesi pengguna.
 
-5. Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?
+4. Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?
 
     Penggunaan cookies aman jika diimplementasikan dengan baik dan benar. Namun, terdapat beberapa risiko potensial yang tetap harus diwaspadai, antara lain :
 
-        - Pelanggaran privasi : data cookies yang menyimpan aktivitas pengguna selama berinteraksi dalam web dapat
-   menjadi masalah pelanggaran privasi jika data tersebut disalahgunakan.
-        - Pencurian cookies : cookies yang tersimpan di browser pengguna dapat dicuri datanya oleh pelaku tindakan
-   kriminal pencurian data. Hal tersebut dapat terjadi jika ada celah keamanan dalam aplikasi web atau jika pengguna
-   mengakses web melalui koneksi (HTTP) yang tidak aman.
-        - Overhead : jumlah cookies yang banyak dapat menyebabkan overhead pada kinerja situs dan lalu lintas web.
-        - Cross-Site Scripting (XSS) : data-data sensitif yang ada dalam cookies dapat dicuri maupun dimanipulasi
-   oleh penyerang dengan cara menyisipkan skrip berbahaya ke dalam halaman web. 
+    - Pelanggaran privasi : data cookies yang menyimpan aktivitas pengguna selama berinteraksi dalam web dapat
+menjadi masalah pelanggaran privasi jika data tersebut disalahgunakan.
+
+    - Pencurian cookies : cookies yang tersimpan di browser pengguna dapat dicuri datanya oleh pelaku tindakan
+kriminal pencurian data. Hal tersebut dapat terjadi jika ada celah keamanan dalam aplikasi web atau jika pengguna
+mengakses web melalui koneksi (HTTP) yang tidak aman.
+
+    - Overhead : jumlah cookies yang banyak dapat menyebabkan overhead pada kinerja situs dan lalu lintas web.
+
+    - Cross-Site Scripting (XSS) : data-data sensitif yang ada dalam cookies dapat dicuri maupun dimanipulasi
+oleh penyerang dengan cara menyisipkan skrip berbahaya ke dalam halaman web. 
 
     Dengan demikian, penggunaan cookies yang tepat tetap perlu diawasi agar dapat terhindar dari risiko potensial yang ada.
     
-7. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+6. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 
     checklist (ck)
 

@@ -16,7 +16,7 @@ Link adaptable : https://tugas-2-pbp.adaptable.app/main/
 
     - Element selector dapat digabung dengan selector lain sehinnga fleksibilitas pemrograman lebih tinggi.
 
-    Element selector tepat digunakan dalam styling umum seperti saat mendesain suatu web karena element selector dapat digunakan untuk mengatur tata letak dan struktur umum sebuah halaman web. Selain itu, element selector juga tepat digunakan untuk mereset atau menghilangkan default pada browser seperti margin '<li>'.
+    Element selector tepat digunakan dalam styling umum seperti saat mendesain suatu web karena element selector dapat digunakan untuk mengatur tata letak dan struktur umum sebuah halaman web. Selain itu, element selector juga tepat digunakan untuk mereset atau menghilangkan default pada browser seperti margin .
 
 2. Jelaskan HTML5 Tag yang kamu ketahui.
 

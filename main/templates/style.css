@@ -1,0 +1,44 @@
+/* Gaya untuk judul halaman */
+h1 {
+    color: #333333;
+    font-size: 5px;
+}
+
+/* Gaya untuk header berwarna latar belakang hijau */
+h3 {
+    background-color: #2f8c6d;
+    color: #db8e8e;
+    padding: 5px;
+}
+
+h2 {
+    color: #333;
+    font-size: 14px;
+}
+
+/* Gaya untuk tabel */
+table {
+    width: 100%;
+    border-collapse: border;
+}
+
+table, table th, table td {
+    border: 2px solid #0b0909;
+    padding: 10px;
+}
+
+/* Gaya untuk tombol */
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Gaya untuk gambar */
+img {
+    max-width: 100%;
+    height: auto;
+}

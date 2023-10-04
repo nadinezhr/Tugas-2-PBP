@@ -1,16 +1,83 @@
+
 {% extends 'base.html' %}
 {% block content %}
 <!DOCTYPE html>
+<html>
 <head>
     <style>
-        th {
-            background-color: #2f8c6d; /* Warna latar belakang header */
+        /* CSS Styles */
+        h1{
+            font-size: 30px;
+            text-align: center;
         }
-        tr {
-            background-color: #e3f5d0; /* Warna latar belakang baris */
-        }
-    </style>
 
+        h2{
+            font-size: 18px;
+        }
+
+        h3{
+            font-size: 14px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #50a287; /* Warna latar belakang header */
+        }
+
+        tr {
+            background-color: #b8ddc8; /* Warna latar belakang baris */
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            border: 2px solid #000;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: center;
+            border: 2px solid #000;
+        }
+
+        body {
+            background-color: #eedddd; /* Warna latar belakang */
+            background-image: url('background.jpg'); /* Gambar latar belakang */
+            background-size: cover; /* Menutupi seluruh halaman */
+            background-repeat: no-repeat; /* Tidak mengulang gambar */
+            background-attachment: fixed; /* Membuat gambar latar tetap saat menggulir halaman */
+            background-position: center center; /* Posisi gambar di tengah */
+        }
+
+
+        .button-container {
+            margin-top: 15px;
+        }
+
+        .custom-button {
+            background-color: #d64d86;
+            color: #ffffff;
+            padding: 3px 8px;
+            border: 1;
+            border-radius: 3px;
+            text-decoration: none;
+        }
+
+        .custom-button:hover {
+            background-color: #45b390; /* Warna latar belakang saat dihover */
+            color: #ffffff; /* Warna teks saat dihover */
+        }
+
+        table tr:last-child {
+            background-color: #1d447a; /* Ganti dengan warna latar belakang yang Anda inginkan */
+        }
+
+        /* Menentukan warna teks untuk baris terakhir dalam tabel */
+        table tr:last-child td {
+            color: #ffffff; /* Ganti dengan warna teks yang Anda inginkan */
+        }
+
+    </style>
 </head>
 <body>
     <h1>Selamat datang di {{ apk }}!</h1>
@@ -20,61 +87,72 @@
 
     <h2>Kamu menyimpan {{jumlah}} item pada aplikasi ini</h2>
     <h2>Daftar Produk : </h2>
-    <table border="1">
-        <tr>
-            <th>Nama Material</th>
-            <th>Deskripsi</th>
-            <th>Stok</th>
-            <th>Harga</th>
-            <th>Gambar Material</th>
-        </tr>
-        {% for product in products %}
-            <tr>
-                <td>{{product.name}}
-                    <!-- Tombol untuk menghapus produk -->
-                <a href="{% url 'main:delete_item' product.id %}">
-                    <button>
-                        Hapus
-                    </button>
-                </a>
-                </td>
-                <td>{{product.description}}</td>
-                <td>{{product.amount}}
-                    <!-- Tombol untuk menambah stok -->
-                    <a href="{% url 'main:add_stock' product.id %}">
-                        <button>
-                            Tambah
-                        </button>
-                    </a>
-                    
-                    <!-- Tombol untuk mengurangi stok -->
-                    <a href="{% url 'main:reduce_stock' product.id %}">
-                        <button>
-                            Kurang
-                        </button>
-                    </a>
-                </td>
-                <td>{{product.price}}</td>
-                <td><img src= "{{ product.picture }}" width="100" /></td>
-            </tr>
-        {% endfor %}
 
-    </table>
+    <div class="table-container">
+        <table border="1">
+            <tr>
+                <th>Nama Material</th>
+                <th>Deskripsi</th>
+                <th>Stok</th>
+                <th>Harga</th>
+                <th>Gambar Material</th>
+                <th>Edit Item</th>
+            </tr>
+            {% for product in products %}
+                <tr>
+                    <td>
+                        {{product.name}}
+                        <!-- Tombol untuk menghapus produk -->
+                        <a href="{% url 'main:delete_item' product.id %}">
+                            <button class="custom-button">
+                                Hapus
+                            </button>
+                        </a>
+                    </td>
+                    <td>{{product.description}}</td>
+                    <td>
+                        {{product.amount}}
+                        <!-- Tombol untuk menambah stok -->
+                        <a href="{% url 'main:add_stock' product.id %}">
+                            <button class="custom-button">
+                                +
+                            </button>
+                        </a>
+                    
+                        <!-- Tombol untuk mengurangi stok -->
+                        <a href="{% url 'main:reduce_stock' product.id %}">
+                            <button class="custom-button">
+                                -
+                            </button>
+                        </a>
+                    </td>
+                    <td>{{product.price}}</td>
+                    <td><img src="{{ product.picture }}" width="100" /></td>
+                    <td> <a href="{% url 'main:edit_product' product.id %}">
+                        <button class="custom-button">
+                            Edit
+                        </button>
+                    </a></td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
     <br />
 
     <h5>Sesi terakhir login: {{ last_login }}</h5>
-    <a href="{% url 'main:create_product' %}">
-        <button>
-            Add New Product
-        </button>
-    </a>
+    <div class="button-container">
+        <a href="{% url 'main:create_product' %}">
+            <button class="custom-button">
+                Add New Product
+            </button>
+        </a>
 
-    <a href="{% url 'main:logout' %}">
-        <button>
-            Logout
-        </button>
-    </a>
-
-    </body>
+        <a href="{% url 'main:logout' %}">
+            <button class="custom-button">
+                Logout
+            </button>
+        </a>
+    </div>
+</body>
 </html>
 {% endblock content %}

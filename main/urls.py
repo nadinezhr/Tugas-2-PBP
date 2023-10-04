@@ -4,6 +4,7 @@ from main.views import register
 from main.views import login_user
 from main.views import logout_user
 from main.views import delete_item, add_stock, reduce_stock
+from main.views import edit_product
 
 app_name = 'main'
 
@@ -20,5 +21,6 @@ urlpatterns = [
     path('delete-item/<int:item_id>/', delete_item, name='delete_item'),
     path('add-stock/<int:item_id>/', add_stock, name='add_stock'),
     path('reduce-stock/<int:item_id>/', reduce_stock, name='reduce_stock'),
+    path('edit-product/<int:id>', edit_product, name='edit_product'),
 
 ]

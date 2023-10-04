@@ -1,45 +1,94 @@
 {% extends 'base.html' %}
-
 {% block meta %}
     <title>Login</title>
 {% endblock meta %}
 
 {% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* CSS untuk kartu login */
+        .login-card {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fcd0d0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
 
-<div class = "login">
+        .login-card h1 {
+            text-align: center;
+        }
 
-    <h1>Login</h1>
+        .login-card form {
+            margin-top: 20px;
+        }
 
-    <form method="POST" action="">
-        {% csrf_token %}
-        <table>
-            <tr>
-                <td>Username: </td>
-                <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
-            </tr>
-                    
-            <tr>
-                <td>Password: </td>
-                <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
-            </tr>
+        .login-card .form-control {
+            width: 70;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
 
-            <tr>
-                <td></td>
-                <td><input class="btn login_btn" type="submit" value="Login"></td>
-            </tr>
-        </table>
-    </form>
+        .login-card .login_btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #d64d86;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-    {% if messages %}
-        <ul>
-            {% for message in messages %}
-                <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}     
+        .login-card .login_btn:hover {
+            background-color: #45b390;
+        }
+
         
-    Don't have an account yet? <a href="{% url 'main:register' %}">Register Now</a>
+        body {
+            background-color: #eedddd; /* Warna latar belakang */
+            background-image: url('background.jpg'); /* Gambar latar belakang */
+            background-size: cover; /* Menutupi seluruh halaman */
+            background-repeat: no-repeat; /* Tidak mengulang gambar */
+            background-attachment: fixed; /* Membuat gambar latar tetap saat menggulir halaman */
+            background-position: center center; /* Posisi gambar di tengah */
+        }
 
-</div>
+    </style>
+</head>
+<body>
+    <div class="login-card">
+        <h1>Login</h1>
 
+        <form method="POST" action="">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Username" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Password" class="form-control">
+            </div>
+
+            <input class="btn login_btn" type="submit" value="Login">
+        </form>
+
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>Don't have an account yet? <a href="{% url 'main:register' %}">Register Now</a></p>
+    </div>
+</body>
+</html>
 {% endblock content %}

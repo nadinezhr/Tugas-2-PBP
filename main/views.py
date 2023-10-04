@@ -123,4 +123,17 @@ def reduce_stock(request, item_id):
         # Handle jika item tidak ditemukan
         return redirect('main:show_main')
 
+def edit_product(request, id):
+    # Get item berdasarkan ID
+    item = Item.objects.get(pk = id)
 
+    # Set product sebagai instance dari form
+    form = ProductForm(request.POST or None, instance=item)
+
+    if form.is_valid() and request.method == "POST":
+        # Simpan form dan kembali ke halaman awal
+        form.save()
+        return HttpResponseRedirect(reverse('main:show_main'))
+
+    context = {'form': form}
+    return render(request, "edit_product.html", context)

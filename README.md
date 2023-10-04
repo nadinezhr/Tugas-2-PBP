@@ -6,6 +6,59 @@ Kelas   : PBP B
 
 Link adaptable : https://tugas-2-pbp.adaptable.app/main/
 
+##TUGAS-5##
+
+1. Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya.
+
+    - Element selector membantu dalam menerapkan gaya atau aturan tertentu hanya pada tipe elemen tertentu tanpa perlu menambahkan atribut khusus seperti class. Contohnya adalah memilih elemen berdasarkan tipe yang ingin diubah dalam dokumen HTML.
+
+    - Element selector bermanfaat dalam memastikan desain yang digunakan konsisten sehingga tampilan web terlihat seragam/serasi.
+
+    - Element selector dapat digabung dengan selector lain sehinnga fleksibilitas pemrograman lebih tinggi.
+
+    Element selector tepat digunakan dalam styling umum seperti saat mendesain suatu web karena element selector dapat digunakan untuk mengatur tata letak dan struktur umum sebuah halaman web. Selain itu, element selector juga tepat digunakan untuk mereset atau menghilangkan default pada browser seperti margin '<li>'.
+
+2. Jelaskan HTML5 Tag yang kamu ketahui.
+
+    HTML5 adalah versi terbaru dari bahasa markup HTML yang dapat digunakan untuk merancang dan membangun sebuah halaman web. HTML5 memiliki beberapa kelebihan termasuk elemen atau tag baru yang dapat menciptakan pengalaman web yang lebih dinamis. HTML5 dapat memisahkan konten web dengan desain, mendorong markup semantik, menghilangkan kebutuhan plugin seperti Java, dan mengurangi terjadinya tumpang tindih antara HTML, CSS, serta JavaScript. 
+
+3. Jelaskan perbedaan antara margin dan padding.
+
+    Margin merupakan ruang di luar elemen yang berfungsi mengatur jarak antarelemen yang berada di ruang luar. Sementara itu, padding merupakan rung dalam elemen yang berfungsi mengatur jarak atau tata letak konten di dalam elemen tersebut. Contohnya adalah saat kita memiliki beberapa elemen yang di dalamnya terdapat konten-konten pada sebuah tampilan web, maka kita dapat mengatur jarak atau letak elemen-elemen tersebut menggunakan margin. Setiap konten dalam elemen-elemen tersebut dapat diatur jaraknya atau letaknya menggunakan padding.
+
+4. Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?
+
+    - Tailwind mendefinisikan gaya elemen langsung pada markup HTML menggunakan kelas-kelas yang telah disediakan, sedangkan bootstrap mendefinisikan gaya elemen secara terpisah dalam berkas CSS Bootstrap yang kemudian akan diimplementasikan ke elemen HTML dengan menggunakan kelas-kelas Bootstrap yang sudah disediakan.
+
+    - Tailwind memiliki tingkat fleksibilitas lebih tinggi dalam menentukan tampilan elemen, sedangkan Bootstrap memiliki fleksibilitas lebih rendah karena perlu menyesuaikan gaya CSS Bootstrap.
+
+    - Karena gaya didefinisikan dalam HTML, Tailwaind akan terlihat lebih berantakan dibandingkan Bootstrap yang mendefinisikan gaya pada kelas CSS terpisah.
+
+    - Tailwind memiliki ukuran berkas yang lebih besar dibanding ukuran berkas dari Bootstrap. Selain itu, Bootstrap menyediakan banyak komponen dan gaya yang sudah siap pakai salah satunya seperti navigasi.
+
+    Gunakan Tailwind saat memerlukan tingkat felksibilitas tinggi dalam merancang tampilan web, ingin menentukan gaya langsung dalam markup HTML, menghindari penumpukan kelas yang tidak dipakai, dan mengelola tema khusus untuk proyek. Sementara itu, gunakan Bootsrap saat ingin mengembangkan situs web dengan cepat menggunakan gaya yang sudah disediakan, ingin tampilan markup lebih bersih, dan menyesuaikan tampilan elemen dalam waktu yang lebih singkat.
+
+    
+
+5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+
+    checklist (ck)
+
+    ck1 : Pertama-tama saya membuka berkas login.html yang ada pada direktori main/templates di vscode. Kemudian, saya mengubah kode dengan menggunakan CSS. Saya menggunakan Card css pada halaman login, register, edit item, dan tambah inventori. Saya juga melakukan perubahan warna background, warna card, dan hover pada setiap tombol yang ada. Saya juga melakukan perubahan CSS tersebut pada berkas file edit_item.html, register.html, dan create_product.html. Sebelumnya, saya menambahkan tombol edit item dengan cara membuka berkas views.py pada direktori main. Selanjutnya saya membuat fungsi bernama edit_item dan menambahkan routing fungsi tersebut ke dalam urlpatterns pada berkas file urls.py di direktori main. Kemudian, saya menambahkan tombol edit pada tabel di main.html.  
+
+    ck2 : Pertama-tama saya membuka berkas file main.html pada direktori main. Kemudian saya menambahkan style css di dalam berkas tersebut, seperti kustomisasi tombol, tabel, letak teks, hover tombol, dan lainnya. Untuk kustomisasi tombol saya menerapkan css menjadi class yang diimplementasikan di HTML seperti <button class "custom-button">.
+
+    ck3 : Saya membuka berkas file README.md pada root direktori, kemudian memberi batasan tugas 4 dan tugas 5 PBP. Terakhir, saya mengisi berkas readme tersebut dengan pertanyaan-pertanyaan tugas 5.
+
+    ck(bonus) : Saya menambahkan style css pada berkas main.html. Saya membuat style table tr : last-child untuk mengubah warna background dari item terakhir yang di tambahkan ke inventori dan tabel tr : last-child td untuk mengubah teks/isi baris terakhir tabel / item terakhir yang ditambahkan.
+
+    ck4 : Saya membuka comment prompt dan mengaktifkan virtual environtment. Setelah itu saya melakukan git add ., git commit -m "pesan commit", dan git push -u origin main.
+
+
+REFERENSI :
+
+- https://kodekreasi.com/fungsi-margin-dan-padding-pada-css/
+
 ##TUGAS-4##
 
 1. Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?

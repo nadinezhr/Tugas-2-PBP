@@ -6,18 +6,24 @@
 <head>
     <style>
         /* CSS Styles */
-        h1{
+        .h1{
             font-size: 30px;
             text-align: center;
         }
 
-        h2{
+        .h2{
             font-size: 18px;
+            
         }
 
-        h3{
+        .h3{
             font-size: 14px;
             text-align: center;
+        }
+
+        .h5{
+            font-size: 14px;
+            
         }
 
         th {
@@ -40,7 +46,7 @@
             border: 2px solid #000;
         }
 
-        body {
+        .body {
             background-color: #eedddd; /* Warna latar belakang */
             background-image: url('background.jpg'); /* Gambar latar belakang */
             background-size: cover; /* Menutupi seluruh halaman */
@@ -68,8 +74,14 @@
             color: #ffffff; /* Warna teks saat dihover */
         }
 
+        .item-image {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
+
         table tr:last-child {
-            background-color: #1d447a; /* Ganti dengan warna latar belakang yang Anda inginkan */
+            background-color: #255395; /* Ganti dengan warna latar belakang yang Anda inginkan */
         }
 
         /* Menentukan warna teks untuk baris terakhir dalam tabel */
@@ -79,14 +91,14 @@
 
     </style>
 </head>
-<body>
-    <h1>Selamat datang di {{ apk }}!</h1>
+<body class="body">
+    <h1 class="h1">Selamat datang di {{ apk }}!</h1>
 
-    <h3>Nama : {{nama}}</h3>
-    <h3>Kelas : {{kelas}}</h3>
+    <h3 class="h3">Nama : {{nama}}</h3>
+    <h3 class="h3">Kelas : {{kelas}}</h3>
 
-    <h2>Kamu menyimpan {{jumlah}} item pada aplikasi ini</h2>
-    <h2>Daftar Produk : </h2>
+    <h2 class="h2">Kamu menyimpan {{jumlah}} item pada aplikasi ini</h2>
+    <h2 class="h2">Daftar Produk : </h2>
 
     <div class="table-container">
         <table border="1">
@@ -127,7 +139,7 @@
                         </a>
                     </td>
                     <td>{{product.price}}</td>
-                    <td><img src="{{ product.picture }}" width="100" /></td>
+                    <td><img class="item-image" src="{{ product.picture }}" width="100" /></td>
                     <td> <a href="{% url 'main:edit_product' product.id %}">
                         <button class="custom-button">
                             Edit
@@ -139,7 +151,7 @@
     </div>
     <br />
 
-    <h5>Sesi terakhir login: {{ last_login }}</h5>
+    <h5 class="h5">Sesi terakhir login: {{ last_login }}</h5>
     <div class="button-container">
         <a href="{% url 'main:create_product' %}">
             <button class="custom-button">

@@ -46,7 +46,7 @@ Link adaptable : https://tugas-2-pbp.adaptable.app/main/
 
     ck1 : Pertama-tama saya membuka berkas login.html yang ada pada direktori main/templates di vscode. Kemudian, saya mengubah kode dengan menggunakan CSS. Saya menggunakan Card css pada halaman login, register, edit item, dan tambah inventori. Saya juga melakukan perubahan warna background, warna card, dan hover pada setiap tombol yang ada. Saya juga melakukan perubahan CSS tersebut pada berkas file edit_item.html, register.html, dan create_product.html. Sebelumnya, saya menambahkan tombol edit item dengan cara membuka berkas views.py pada direktori main. Selanjutnya saya membuat fungsi bernama edit_item dan menambahkan routing fungsi tersebut ke dalam urlpatterns pada berkas file urls.py di direktori main. Kemudian, saya menambahkan tombol edit pada tabel di main.html.  
 
-    ck2 : Pertama-tama saya membuka berkas file main.html pada direktori main. Kemudian saya menambahkan style css di dalam berkas tersebut, seperti kustomisasi tombol, tabel, letak teks, hover tombol, dan lainnya. Untuk beberapa css seperti kustomisasi tombol, saya menerapkan css menjadi class yang diimplementasikan di HTML seperti <button class="custom-button">.
+    ck2 : Pertama-tama saya membuka berkas file main.html pada direktori main. Kemudian saya menambahkan style css di dalam berkas tersebut, seperti kustomisasi tombol, tabel, letak teks, hover tombol, dan lainnya. Untuk beberapa css seperti kustomisasi tombol, saya menerapkan css menjadi class yang diimplementasikan di HTML.
 
     ck3 : Saya membuka berkas file README.md pada root direktori, kemudian memberi batasan tugas 4 dan tugas 5 PBP. Terakhir, saya mengisi berkas readme tersebut dengan pertanyaan-pertanyaan tugas 5.
 

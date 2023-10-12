@@ -6,6 +6,56 @@ Kelas   : PBP B
 
 Link adaptable : https://tugas-2-pbp.adaptable.app/main/
 
+##TUGAS-6##
+
+1. Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.
+
+    Asynchronus programming : operasi dapat dijalankan tanpa harus menunggu operasi sebelumnya selesai sehingga program tetap responsif. Dapat mengeksekusi beberapa tugas/request secara bersamaan tanpa menghentikan program. Cocok untuk tugas yang membutuhkan waktu eksekusi lama karena tidak menghentikan program utama.
+
+    Synchronus programming : operasi dilakukan secara berurutan sehingga program harus menunggu satu tugas selesai sebelum menjalankan tugas lain. Dapat mengakibatkan blokade jika ada tugas yang membutuhkan waktu eksekusi lama sehingga program kurang responsif. Cocok untuk tugas-tugas sederhana yang dieksekusi berurutan. 
+
+2. Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma event-driven programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.
+
+    Paradigma event-driven programming merupakan pendekatan dalam pemrograman dimana program merespons events yang terjadi, seperti interaksi pengguna, masukkan internal atau notifikasi sistem, daripada berjalan secara berurutan atau linear. Program akan menjalankan respons peristiwa secara asinkronus. Contoh penggunaan paradigma tersebut dalam tugas adalah penggunaan onclick pada button addProduct AJAX.
+
+3. Jelaskan penerapan asynchronous programming pada AJAX.
+
+    Pertama, membuat objek XMLHttpRequest untuk melakukan permintaan asinkron ke server. Kedua, mendefinisikan fungsi callback atau fungsi yang akan dipanggil ketika permintaan selesai (setelah menerima respons dari server). Ketiga atau terakhir adalah mengirim permintaan ke server setelah melakukan konfigurasi callback. Dengan demikian, permintaan akan berjalan secara asinkronus dan program akan tetap berjalan (tidak harus berurutan).
+
+4. Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan.
+
+    Fetch API :
+
+    - API dari JavaScript yang lebih modern sehingga memungkinkan pengkodean aynchronus yang lebih bersih dan mudah dibaca.
+
+    - Fetch API bersifat fleksibel sehingga memberikan kendali yang lebih besar atas permintaan HTTP, salah satunya seperti tindakan yang lebih rinci pada respons.
+
+    - Fetch API lebih ringan dari jQuery karena merupakan bagian JavaScript murni.
+
+    - Menggunakan async/wait dalam mengelola tugas-tugas asinkronus.
+
+    jQuery :
+
+    - Dirancang untuk menyederhanakan interaksi DOM dan AJAX sehingga cocok untuk mendukung peramban lama.
+
+    - Memiliki berbagai plugin yang dapat digunakan, seperti animasi dan manipulasi DOM. 
+
+    - Karena memiliki antarmuka yang lebih sederhana, jQuery cocok bagi pemula dalam pemrograman web.
+
+    Menurut saya, kedua teknologi tersebut memiliki keunggulan masing-masing. Namun, karena teknologi terus berkembang, saya merasa Fetch API lebih baik digunakan karena teknologinya yang lebih modern dan memiliki basis promise (dapat menggabungkan dengan async/await).
+
+5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+
+    checklist (ck)
+
+    ck1 : Pertama-tama, saya membuka direktori tugas saya pada vscode dan membuka command prompt (cmd). Kemudian, saya membuka berkas file views.py yang ada di direktori main untuk menambahkan fungsi baru bernama get_product_json. Setelah itu, saya menambahkan routing fungsi tersebut ke berkas file urls.py pada direktori main dengan melakukan import fungsi tersebut dan memasukkan pathnya ke dalam urlpatterns.
+
+    ck2 : Pertama-tama, saya membuka views.py yang ada di direktori main untuk menambahkan import  dan fungsi baru bernama add_product_ajax. Kemudian, saya melakukan routing fungsi tersebut ke urls.py pada direktori main dengan mengimport fungsi tersebut dan memasukkan pathnya ke urlpatterns. Selanjutnya, agar program dilakukan asynchronus, saya menambahkan blok script pada main.html dan mengisi blok tersebut dengan fungsi async function getProducts dan refreshProducts. Saya melakukan beberapa perubahan kode pada refreshProducts untuk menyesuaikan tampilan cards pada main.html. Kemudian, pada berkas main.html saya juga menambahkan kode untuk implementasi modal Bootstrap (form yang akan muncul saat ingin menambahkan produk dengan AJAX). Saya juga menambahkan beberapa kode pada bagian bootstrap tersebut, yakni kode untuk stok dan URL gambar produk. Setelah itu, saya menambahkan button yang nantinya akan menampilkan modal. Untuk menambahkan produk dengan AJAX, saya membuat fungsi baru dalam blok script yang sebelumnya sudah ada dengan nama function addProduct serta menambahkan potongan kode fungsi onclick pada button AddProduct untuk menjalankan fungsi addProduct tersebut.
+
+    ck3 : Pertama-tama buka cmd dan aktifkan virtual environtment. Kemudian, lakukan perintah git add ., git commit -m "pesan commit", git push -u origin main.
+
+    ck4 : 
+
 ##TUGAS-5##
 
 1. Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya.

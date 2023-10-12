@@ -1,11 +1,10 @@
-
 {% extends 'base.html' %}
 {% block content %}
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- CSS Styles -->
     <style>
-        /* CSS Styles */
         .h1{
             font-size: 30px;
             text-align: center;
@@ -21,150 +20,173 @@
             text-align: center;
         }
 
-        .h5{
-            font-size: 14px;
-            
-        }
-
-        th {
-            background-color: #50a287; /* Warna latar belakang header */
-        }
-
-        tr {
-            background-color: #b8ddc8; /* Warna latar belakang baris */
-        }
-
-        table {
-            border-collapse: collapse;
-            width: 100%;
+        .product-card {
             border: 2px solid #000;
-        }
-
-        th, td {
-            padding: 8px;
+            padding: 10px;
+            margin: 10px;
+            width: 300px;
+            display: inline-block;
             text-align: center;
-            border: 2px solid #000;
         }
 
-        .body {
-            background-color: #eedddd; /* Warna latar belakang */
-            background-image: url('background.jpg'); /* Gambar latar belakang */
-            background-size: cover; /* Menutupi seluruh halaman */
-            background-repeat: no-repeat; /* Tidak mengulang gambar */
-            background-attachment: fixed; /* Membuat gambar latar tetap saat menggulir halaman */
-            background-position: center center; /* Posisi gambar di tengah */
+        .last-card {
+        background-color: #84b1ef; /* Atur warna latar belakang untuk card terakhir */
         }
 
+        .card-image {
+            max-width: 100%;
+            height: 150px;
+            width: 150px;
+        }
 
-        .button-container {
-            margin-top: 15px;
+        .card-title {
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .card-description {
+            font-size: 14px;
+        }
+
+        .card-stock, .card-price {
+            font-size: 12px;
         }
 
         .custom-button {
             background-color: #d64d86;
             color: #ffffff;
             padding: 3px 8px;
-            border: 1;
+            border: 1px solid #000;
             border-radius: 3px;
             text-decoration: none;
+            display: block;
+            margin-top: 5px;
+            width: auto;
+            text-align: center;
+            
         }
 
         .custom-button:hover {
-            background-color: #45b390; /* Warna latar belakang saat dihover */
-            color: #ffffff; /* Warna teks saat dihover */
+            background-color: #45b390;
         }
-
-        .item-image {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-        }
-
-        table tr:last-child {
-            background-color: #255395; /* Ganti dengan warna latar belakang yang Anda inginkan */
-        }
-
-        /* Menentukan warna teks untuk baris terakhir dalam tabel */
-        table tr:last-child td {
-            color: #ffffff; /* Ganti dengan warna teks yang Anda inginkan */
-        }
-
     </style>
+
 </head>
-<body class="body">
+<body>
     <h1 class="h1">Selamat datang di {{ apk }}!</h1>
+    <h3 class="h3">Nama: {{ nama }}</h3>
+    <h3 class="h3">Kelas: {{ kelas }}</h3>
+    <h2>Kamu menyimpan {{ jumlah }} item pada aplikasi ini</h2>
+    <h2>Daftar Produk:</h2>
 
-    <h3 class="h3">Nama : {{nama}}</h3>
-    <h3 class="h3">Kelas : {{kelas}}</h3>
+    <table id="product_table">
+    
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Product</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="form" onsubmit="return false;">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="name" class="col-form-label">Nama Produk:</label>
+                                <input type="text" class="form-control" id="name" name="name"></input>
+                            </div>
+                            <div class="mb-3">
+                                <label for="price" class="col-form-label">Harga:</label>
+                                <input type="number" class="form-control" id="price" name="price"></input>
+                            </div>
+                            <div class="mb-3">
+                                <label for="description" class="col-form-label">Deskripsi:</label>
+                                <textarea class="form-control" id="description" name="description"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="amount" class="col-form-label">Stok:</label>
+                                <input type="number" class="form-control" id="amount" name="amount"></input>
+                            </div>
+                            <div class="mb-3">
+                                <label for="url" class="col-form-label">URL Gambar:</label>
+                                <input type="url" class="form-control" id="url" name="url"></input>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="button_add" data-bs-dismiss="modal">Add Product</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+</table>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Product by AJAX</button>
 
-    <h2 class="h2">Kamu menyimpan {{jumlah}} item pada aplikasi ini</h2>
-    <h2 class="h2">Daftar Produk : </h2>
 
-    <div class="table-container">
-        <table border="1">
-            <tr>
-                <th>Nama Material</th>
-                <th>Deskripsi</th>
-                <th>Stok</th>
-                <th>Harga</th>
-                <th>Gambar Material</th>
-                <th>Edit Item</th>
-            </tr>
-            {% for product in products %}
-                <tr>
-                    <td>
-                        {{product.name}}
-                        <!-- Tombol untuk menghapus produk -->
-                        <a href="{% url 'main:delete_item' product.id %}">
-                            <button class="custom-button">
-                                Hapus
-                            </button>
-                        </a>
-                    </td>
-                    <td>{{product.description}}</td>
-                    <td>
-                        {{product.amount}}
-                        <!-- Tombol untuk menambah stok -->
-                        <a href="{% url 'main:add_stock' product.id %}">
-                            <button class="custom-button">
-                                +
-                            </button>
-                        </a>
-                    
-                        <!-- Tombol untuk mengurangi stok -->
-                        <a href="{% url 'main:reduce_stock' product.id %}">
-                            <button class="custom-button">
-                                -
-                            </button>
-                        </a>
-                    </td>
-                    <td>{{product.price}}</td>
-                    <td><img class="item-image" src="{{ product.picture }}" width="100" /></td>
-                    <td> <a href="{% url 'main:edit_product' product.id %}">
-                        <button class="custom-button">
-                            Edit
-                        </button>
-                    </a></td>
-                </tr>
-            {% endfor %}
-        </table>
-    </div>
     <br />
-
-    <h5 class="h5">Sesi terakhir login: {{ last_login }}</h5>
+    <h5>Sesi terakhir login: {{ last_login }}</h5>
     <div class="button-container">
-        <a href="{% url 'main:create_product' %}">
-            <button class="custom-button">
-                Add New Product
-            </button>
-        </a>
-
-        <a href="{% url 'main:logout' %}">
-            <button class="custom-button">
-                Logout
-            </button>
-        </a>
+        <a href="{% url 'main:create_product' %}" class="custom-button">Add product</a>
+        <a href="{% url 'main:logout' %}" class="custom-button">Logout</a>
     </div>
+    
+    <script>
+        
+    async function getProducts() {
+    return fetch("{% url 'main:get_product_json' %}").then((res) => res.json())
+    }
+
+    async function refreshProducts() {
+        document.getElementById("product_table").innerHTML = ""
+        const products = await getProducts()
+        products.forEach((item) => {
+        const card = ` <div class="product-container">
+        <div class="product-card">
+                <img src="${ item.fields.picture }" class="card-image">
+                <h2 class="card-title">${ item.fields.name }</h2>
+                <p class="card-description">${ item.fields.description}</p>
+                <p class="card-stock">Stok: ${ item.fields.amount }</p>
+                <p class="card-price">Harga: ${ item.fields.price }</p>
+                <a href="edit-product/${item.pk}" class="btn btn-primary" style="margin-bottom: 10px;">Edit</a>
+                <a href="reduce_stock/${item.id}" class="btn btn-primary" style="margin-bottom: 10px;">-</a>
+                <a href="add_stock/${item.id}" class="btn btn-primary" style="margin-bottom: 10px;">+</a>
+                <button onclick="deleteItem(${item.id})" type="submit" >Delete</button>
+            </div>
+        </div>` ;
+        document.getElementById("product_table").innerHTML += card;
+    });
+        
+    }
+
+    function deleteItem(id) {
+        const form = new FormData()
+        form.append('product_id', id)
+
+        fetch('/delete_item/',{
+            method : 'DELETE',
+            headers: {
+                'X-CSRFToken' : csrftoken,
+                'mode' : 'same-origin'
+            },
+            body : form
+        }).then(res => {refreshProducts();})
+    }
+    
+    function addProduct() {
+        fetch("{% url 'main:add_product_ajax' %}", {
+            method: "POST",
+            body: new FormData(document.querySelector('#form'))
+        }).then(refreshProducts)
+        
+        document.getElementById("form").reset()
+        return false
+    }
+    document.getElementById("button_add").onclick = addProduct
+    
+    refreshProducts()
+</script>
+
+{% endblock content %}
 </body>
 </html>
-{% endblock content %}

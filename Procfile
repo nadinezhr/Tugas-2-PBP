@@ -1,2 +1,2 @@
 release: django-admin migrate --noinput
-web: gunicorn Nadterial_store.wsgi
+web: gunicorn nadterial_store.wsgi

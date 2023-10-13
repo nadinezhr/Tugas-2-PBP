@@ -54,7 +54,7 @@ Link adaptable : https://tugas-2-pbp.adaptable.app/main/
 
     ck3 : Pertama-tama buka cmd dan aktifkan virtual environtment. Kemudian, lakukan perintah git add ., git commit -m "pesan commit", git push -u origin main.
 
-    ck4 (deployment): Pertama-tama saya menambahkan django environ pada berkas requirements.txt dan melakukan perintah pada cmd untuk menginstal perubahan. Kemudian, saya membuat berkas file Procfile, folder .github, subfolder workflows, dan berkas pcp-deploy.yml.
+    ck4 (deployment): Pertama-tama saya menambahkan django environ pada berkas requirements.txt dan melakukan perintah pada cmd untuk menginstal perubahan. Kemudian, saya membuat berkas file Procfile, folder .github, subfolder workflows, dan berkas pcp-deploy.yml. Kemudian, saya membuat berkas baru bernama .dockerignore dan Dockerfile. Selanjutnya, saya menambahkan import environ, kode secret key, databases, dan static url pada file settings. Terakhir, saya menambahkan beberpa repository secret pada github berupa DOKKU_SERVER_IP, DOKKU_APP_NAME, dan DOKKU_SSH_PRIVATE_KEY.
 
 ##TUGAS-5##
 

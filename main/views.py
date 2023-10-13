@@ -146,11 +146,59 @@ def add_product_ajax(request):
         name = request.POST.get("name")
         price = request.POST.get("price")
         description = request.POST.get("description")
+        amount = request.POST.get("amount")
+        picture = request.POST.get("picture")
         user = request.user
 
-        new_product = Item(name=name, price=price, description=description, user=user)
+        new_product = Item(name=name, price=price, description=description, amount=amount, picture=picture, user=user)
         new_product.save()
 
         return HttpResponse(b"CREATED", status=201)
 
     return HttpResponseNotFound()
+
+@csrf_exempt
+def reduce_ajax(request):
+    if request.method == 'POST':
+        id = request.POST.get("id")
+        try:
+            product = Item.objects.get(pk=id)
+            product.amount -= 1
+            product.save()
+            if product.amount <= 0:
+                product.delete()
+            return HttpResponse(status = 201)
+        except Item.DoesNotExist:
+            return HttpResponseNotFound("Item not found")
+        
+    return HttpResponseNotFound()
+    
+@csrf_exempt
+def addAmount_ajax(request):
+    if request.method == 'POST':
+        id = request.POST.get("id")
+        try:
+            product = Item.objects.get(pk=id)
+            product.amount += 1
+            product.save()
+            if product.amount <= 0:
+                product.delete()
+            return HttpResponse(status = 201)
+        except Item.DoesNotExist:
+            return HttpResponseNotFound("Item not found")
+        
+    return HttpResponseNotFound()
+
+@csrf_exempt
+def delete_ajax(request):
+    if request.method == 'POST':
+        id = request.POST.get("id")
+        try:
+            product = Item.objects.get(pk=id)
+            product.delete()
+            return HttpResponse(status = 201)
+        except Item.DoesNotExist:
+            return HttpResponseNotFound("Item not found")
+        
+    return HttpResponseNotFound()
+

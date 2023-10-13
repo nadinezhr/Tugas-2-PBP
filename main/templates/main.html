@@ -149,9 +149,9 @@
                 <p class="card-stock">Stok: ${ item.fields.amount }</p>
                 <p class="card-price">Harga: ${ item.fields.price }</p>
                 <a href="edit-product/${item.pk}" class="btn btn-primary" style="margin-bottom: 10px;">Edit</a>
-                <a href="reduce_stock/${item.id}" class="btn btn-primary" style="margin-bottom: 10px;">-</a>
-                <a href="add_stock/${item.id}" class="btn btn-primary" style="margin-bottom: 10px;">+</a>
-                <button onclick="deleteItem(${item.id})" type="submit" >Delete</button>
+                <a href="#" class="btn btn-primary" onclick="reduceItem(${item.pk})" style="margin-bottom: 10px;">-</a>
+                <a href="#" class="btn btn-primary" onclick="addItemAmount(${item.pk})" style="margin-bottom: 10px;">+</a>
+                <a href="#" class="btn btn-primary" onclick="deleteItemAjax(${item.pk})" style="margin-bottom: 10px;">Hapus</a>>
             </div>
         </div>` ;
         document.getElementById("product_table").innerHTML += card;
@@ -159,20 +159,39 @@
         
     }
 
-    function deleteItem(id) {
-        const form = new FormData()
-        form.append('product_id', id)
+    async function reduceItem(pk){
+        const formData = new FormData();
+        formData.append("id", pk);
+        fetch("{% url 'main:reduce_ajax'%}", {
+            method: "POST",
+            body: formData
+        }).then(() => {
+            refreshProducts();
+        });
+    }
 
-        fetch('/delete_item/',{
-            method : 'DELETE',
-            headers: {
-                'X-CSRFToken' : csrftoken,
-                'mode' : 'same-origin'
-            },
-            body : form
-        }).then(res => {refreshProducts();})
+    async function addItemAmount(pk){
+        const formData = new FormData();
+        formData.append("id", pk);
+        fetch("{% url 'main:addAmount_ajax'%}", {
+            method: "POST",
+            body: formData
+        }).then(() => {
+            refreshProducts();
+        });
     }
     
+    async function deleteItemAjax(pk){
+        const formData = new FormData();
+        formData.append("id", pk);
+        fetch("{% url 'main:delete_ajax'%}", {
+            method: "POST",
+            body: formData
+        }).then(() => {
+            refreshProducts();
+        });
+    }
+
     function addProduct() {
         fetch("{% url 'main:add_product_ajax' %}", {
             method: "POST",

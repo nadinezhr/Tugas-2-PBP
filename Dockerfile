@@ -4,7 +4,7 @@ WORKDIR /app
 
 ENV PYTHONUNBUFFERED=1 \
     PYTHONPATH=/app \
-    DJANGO_SETTINGS_MODULE=Nadterial_store.settings \
+    DJANGO_SETTINGS_MODULE=nadterial_store.settings \
     PORT=8000 \
     WEB_CONCURRENCY=2
 

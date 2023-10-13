@@ -54,7 +54,7 @@ Link adaptable : https://tugas-2-pbp.adaptable.app/main/
 
     ck3 : Pertama-tama buka cmd dan aktifkan virtual environtment. Kemudian, lakukan perintah git add ., git commit -m "pesan commit", git push -u origin main.
 
-    ck4 : 
+    ck4 : Pertama-tama saya menambahkan django environ pada berkas requirements.txt. 
 
 ##TUGAS-5##
 
